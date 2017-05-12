@@ -1,0 +1,128 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  
+  name: Mikulikovi
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret homelatitude
+  longitude: !secret homelongitude
+  
+  elevation: 390
+  
+  unit_system: metric
+  time_zone: Europe/Prague
+  customize: !include includes/customize.yaml
+
+zone:
+  name: Home
+  latitude: !secret homelatitude
+  longitude: !secret homelongitude
+  radius: 200
+  icon: mdi:home
+
+zone 2:
+  name: Jachymov
+  latitude:  !secret jachymovlatitude
+  longitude: !secret jachymovlongitude
+  radius: 200
+  icon: mdi:factory
+  #  panel_custom:
+#    - name: react
+#      sidebar_title: TodoMVC
+#      sidebar_icon: mdi:work
+#      url_path: todomvc
+#      config:
+#        title: hello  
+
+
+
+      
+mqtt:
+#  broker: m21.cloudmqtt.com
+#  port: 16343
+#  client_id: home-assistant-1
+#  keepalive: 60
+#  username: wbcqnona
+#  password: uZd3PxqHG8aR
+  broker: localhost
+  port: 1883
+  client_id: home-assistant-1
+  keepalive: 60
+http:
+  api_password:  !secret http_password
+  server_port: 8123
+  #development: 1
+  ssl_certificate: /home/pi/mikserv.pem
+  ssl_key: /home/pi/privatemik.pem
+  
+notify:
+  - name: pushbullet
+    platform: pushbullet
+    api_key: ! secret pushbuletapikey
+  - name: HTML5
+    platform: html5
+    gcm_api_key: !secret gcmapikey
+    gcm_sender_id: !secret gcmsenderid
+
+
+config:
+automation: !include_dir_merge_list includes/automation
+switch: !include includes/switch.yaml
+sensor: !include includes/sensor.yaml
+binary_sensor: !include includes/binary_sensor.yaml
+group: !include includes/groups.yaml
+
+panel_custom:
+  - name: react
+    sidebar_title: TodoMVC
+    sidebar_icon: mdi:checkbox-marked-outline
+    config:
+      title: Wow hello!
+#zwave:
+#  device_config: !include zwave_device_config.yaml
+  
+camera:
+  - platform: local_file
+    file_path: /home/pi/captureJachymovLivingRoom.jpg
+  - platform: local_file
+    file_path: /home/pi/captureJachymovWindowBedRoom.jpg
+  # - platform: mjpeg
+    # mjpeg_url: http://10.0.2.2/mjpeg/snap.cgi?chn=0
+    # username: admin
+    # password: 1Pametice
+    # authentication: basic
+
+media_player:
+  - platform: samsungtv
+    host: 10.0.0.122
+    port: 8001
+    name: Kladno living room TV
+    mac: !secret hometvmac
+  - platform: kodi
+    host: 10.0.2.143  //mac 08:ea:40:a3:fc:28
+    port: 8080
+    name: Kodi
+    username: kodi
+    password: kodi
+device_tracker:
+  - platform: ping
+    hosts:
+        Printer_Xerox: 10.0.0.6
+#device_tracker:
+#  platform: nmap_tracker
+#  hosts: 10.0.0.0/24
+#  home_interval: 10
+#  exclude:
+#   - 10.8.0.1
+
+recorder:
+  db_url: !secret dburl
+
+# Enables support for tracking state changes over time.
+history:
+frontend:
+logbook:
+updater:
+conversation:
+sun:
+
+

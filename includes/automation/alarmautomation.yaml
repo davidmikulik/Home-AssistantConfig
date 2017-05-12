@@ -1,0 +1,154 @@
+#######################
+####### ALARM #########
+#######################
+  - alias: raiseAlarm
+    hide_entity: true
+    trigger:
+      platform: state
+      entity_id:
+        - sensor.veranda_433
+        - binary_sensor.veranda_entrance
+        - binary_sensor.backdoors
+    condition:
+     condition: and
+     conditions:
+      - condition: state
+        entity_id: 'switch.alarm_full'
+        state: 'on'
+    action:
+      service: notify.pushbullet
+      data:
+        message: Alarm doma !!!! 433 {{ states.sensor.veranda_433.state }} backdoors {{ states.binary_sensor.backdoors.state }} veranda entrance {{ states.binary_sensor.veranda_entrance.state }}
+  - alias: raiseAlarmFirstFloor
+    hide_entity: true
+    trigger:
+      platform: state
+      entity_id:
+        - sensor.veranda_433
+        - binary_sensor.veranda_entrance
+        - binary_sensor.backdoors
+    condition:
+     condition: and
+     conditions:
+      - condition: state
+        entity_id: 'switch.alarm_first_floor'
+        state: 'on'
+      - condition: or
+        conditions:
+         - condition: state
+           entity_id: 'binary_sensor.backdoors'
+           state: 'on'
+         - condition: state
+           entity_id: 'binary_sensor.veranda_entrance'
+           state: 'on'
+         - condition: state
+           entity_id: 'sensor.veranda_433'
+           state: '583760'
+         - condition: state
+           entity_id: 'sensor.veranda_433'
+           state: '424713'
+    action:
+      service: notify.pushbullet
+      data:
+        message: Alarm prizemi !!!! 433 {{ states.sensor.veranda_433.state }} backdoors {{ states.binary_sensor.backdoors.state }} veranda entrance {{ states.binary_sensor.veranda_entrance.state }}
+
+
+##############################
+####### ALARM ON/OFF #########
+##############################
+  - alias: alarmOn
+    hide_entity: true
+    trigger:
+      platform: state
+      entity_id:
+        - sensor.veranda_433
+    condition:
+     condition: or
+     conditions:
+      - condition: state
+        entity_id: 'sensor.veranda_433'
+        state: '1002688'
+      - condition: state
+        entity_id: 'sensor.veranda_433'
+        state: '15930816'    
+      - condition: state
+        entity_id: 'sensor.veranda_433'
+        state: '6092224'
+      - condition: state
+        entity_id: 'sensor.veranda_433'
+        state: '3437760'
+      - condition: state
+        entity_id: 'sensor.veranda_433'
+        state: '4406464'
+      - condition: state
+        entity_id: 'sensor.veranda_433'
+        state: '13846464'
+    action:
+     service:  mqtt.publish
+     data:
+      topic: "kladno/veranda/433"
+      payload: "alarmOn"
+  - alias: alarmOff
+    hide_entity: true
+    trigger:
+      platform: state
+      entity_id:
+        - sensor.veranda_433
+    condition:
+     condition: or
+     conditions:
+      - condition: state
+        entity_id: 'sensor.veranda_433'
+        state: '1002508'
+      - condition: state
+        entity_id: 'sensor.veranda_433'
+        state: '15930636'
+      - condition: state
+        entity_id: 'sensor.veranda_433'
+        state: '6092044'
+      - condition: state
+        entity_id: 'sensor.veranda_433'
+        state: '3437580'
+      - condition: state
+        entity_id: 'sensor.veranda_433'
+        state: '4406284'
+      - condition: state
+        entity_id: 'sensor.veranda_433'
+        state: '13846284'
+    action:
+     service:  mqtt.publish
+     data:
+      topic: "kladno/veranda/433"
+      payload: "alarmOff"
+  - alias: alarmFirsFloorOn
+    hide_entity: true
+    trigger:
+      platform: state
+      entity_id:
+        - sensor.veranda_433
+    condition:
+     condition: or
+     conditions:
+      - condition: state
+        entity_id: 'sensor.veranda_433'
+        state: '1002499'
+      - condition: state
+        entity_id: 'sensor.veranda_433'
+        state: '15930627'
+      - condition: state
+        entity_id: 'sensor.veranda_433'
+        state: '6092035'
+      - condition: state
+        entity_id: 'sensor.veranda_433'
+        state: '3437571'
+      - condition: state
+        entity_id: 'sensor.veranda_433'
+        state: '4406275'
+      - condition: state
+        entity_id: 'sensor.veranda_433'
+        state: '13846275'
+    action:
+     service:  mqtt.publish
+     data:
+      topic: "kladno/veranda/433"
+      payload: "alarmFirstFloorOn"

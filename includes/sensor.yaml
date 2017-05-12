@@ -1,0 +1,116 @@
+  - platform: mqtt
+    state_topic: "kladno/livingroom/433"
+    name: "Kladno 433"
+#    value_template: 
+#     '{% if is_state("sensor.kladno_433", "13686620") %} Stairs 
+#      {% elif  is_state("sensor.kladno_433", "424713") %} Testing sensor 
+#      {% elif  is_state("sensor.kladno_433", "583760") %} Doors 
+#      {% elif  is_state("sensor.kladno_433", "817244") %} Living room
+#      {% elif  is_state("sensor.kladno_433", "1002688") %} David Alarm On
+#      {% elif  is_state("sensor.kladno_433", "1002508") %} David Alarm Off
+#      {% elif  states.sensor.kladno_433.state == "424713" %} Kitchen
+
+#      {% else %} {{value_json}}
+#      {% endif %}'
+  - platform: mqtt
+    state_topic: "kladno/veranda/433"
+    name: "Veranda 433"
+  - platform: mqtt
+    state_topic: "Temperature_Kladno_studyRoom"
+    name: "Temperature pracovna"
+    unit_of_measurement: "°C"
+  - platform: mqtt
+    state_topic: "Humidity_Kladno_studyRoom"
+    name: "Humidity pracovna"
+    unit_of_measurement: "%"
+  - platform: mqtt
+    state_topic: "Temperature_Jachymov_Kitchen"
+    name: "Teplota Jachymov kuchyn"
+    value_template: '{{ value_json|round(1) }}'
+    unit_of_measurement: "°C"
+  - platform: mqtt
+    state_topic: "Humidity_Jachymov_Kitchen"
+    name: "Vlhkost Jachymov kuchyn"
+    value_template: '{{ value_json|round(1) }}'
+    unit_of_measurement: "%"
+  - platform: mqtt
+    state_topic: "Light_Kladno_studyRoom"
+    name: "Light_Kladno_studyRoom"   
+    unit_of_measurement: "%"
+  - platform: mqtt
+    state_topic: "Temperature_Jachymov_LivRoom"
+    name: "Temperature Jachymov"
+    value_template: '{{ value_json|round(1) }}'
+    unit_of_measurement: "°C"
+  - platform: mqtt
+    state_topic: "Humidity_Jachymov_LivRoom"
+    name: "Humidity Jachymov"
+    value_template: '{{ value_json|round(1) }}'
+    unit_of_measurement: "%"
+  - platform: mqtt
+    state_topic: "Light_Jachymov_LivRoom"
+    name: "Light_Jachymov_LivRoom"
+    unit_of_measurement: "%"
+  - platform: mqtt
+    state_topic: "kladno/veranda/temp"
+    name: "Veranda Temperature"
+    unit_of_measurement: "°C"
+  - platform: mqtt
+    state_topic: "kladno/veranda/hum"
+    name: "Veranda Humidity"
+    unit_of_measurement: "%"
+  - platform: mqtt
+    state_topic: "kladno/veranda/light"
+    name: "Veranda Light"
+    unit_of_measurement: "%"
+  - platform: mqtt
+    state_topic: "TestMotion"
+    name: "TestMotion"
+  - platform: mqtt
+    state_topic: "kladno/gate/gate"
+    name: "Kladno gate distance"
+    unit_of_measurement: "cm"
+  - platform: mqtt
+    state_topic: "JachymovResetator"
+    name: "Jachymov Resetator Alive"
+  - platform: mqtt
+    state_topic: "jachymov/outdoor/temp"
+    name: "Jachymov outdoor temperature"
+    unit_of_measurement: "°C"
+  - platform: mqtt
+    state_topic: "kladno/gate/doorbell"
+    name: "Kladno doorbell"
+  #- platform: mqtt
+  #  state_topic: "MailBox"
+  #  name: "MailBox"
+  - platform: moon
+  - platform: time_date
+    display_options:
+     - 'time'
+  - platform: yr
+    monitored_conditions:
+      - temperature
+      - symbol
+      - precipitation
+      - windSpeed
+      - pressure
+      - windDirection
+      - humidity
+      - fog
+      - cloudiness
+      - lowClouds
+      - mediumClouds
+      - highClouds
+      - dewpointTemperature
+  - platform: snmp
+    name: Jachymov AD
+    host: 10.0.2.138
+    community: public
+    baseoid: .1.3.6.1.2.1.1.3.0
+  - platform: snmp
+    name: Jachymov ADSL start
+    host: 10.0.2.138
+    community: public
+    baseoid: .1.3.6.1.2.1.2.2.1.9.4
+    #baseoid: 3.6.1.6.3.1
+    #baseoid: 1.3.6.1.2.1.2.2.1.16.1

@@ -1,0 +1,72 @@
+  - alias: Door bell
+    hide_entity: true
+    trigger:
+      platform: state
+      entity_id: sensor.door_bell
+      state: Nekdo zvoni!!!
+    action:
+      service: notify.pushbullet
+      data:
+        message: 'Nekdo zvoni!!!!'
+  - alias: Door bell  2
+    hide_entity: true
+    trigger:
+      platform: state
+      entity_id:
+        - sensor.kladno_doorbell
+    action:
+     service:  mqtt.publish
+     data:
+      topic: "kladno/veranda/callback"
+      payload: "tone553"
+  - alias: Test Motion
+    hide_entity: true
+    trigger:
+      platform: state
+      entity_id: sensor.testmotion
+      state: Motion!!!
+    condition:
+      condition: or
+      conditions:
+       - condition: template
+         value_template: "{{sensor.testmotion == 'Motion!!!' }}"
+       - condition: template
+         value_template: "{{ switch.alarm_full == true }}"
+    action:
+      service: notify.pushbullet
+      data:
+        message: 'Motion!!!!'
+  - alias: Jachymov off
+    hide_entity: true
+    trigger:
+      platform: state
+      entity_id:
+        - binary_sensor.jachymov_raspberry
+        - binary_sensor.nodemcu_jachymov_living_room
+        - binary_sensor.jachymov_adsl
+      state: 'off'
+    condition:
+     condition: and
+     conditions:
+      - condition: state
+        entity_id: 'binary_sensor.jachymov_raspberry'
+        state: 'off'
+      - condition: state
+        entity_id: 'binary_sensor.jachymov_adsl'
+        state: 'off'
+    action:
+      service: notify.pushbullet
+      data:
+        message: Vypadek Jachymov!!!!
+  - alias: Jachymov off html5
+    hide_entity: true
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.jachymov_raspberry
+    action:
+      service: notify.html5
+      data_template:
+        message: "Vypadek Jachymov!!!!"
+      data:
+        data:
+          tag: 'notification-about-jachymov'

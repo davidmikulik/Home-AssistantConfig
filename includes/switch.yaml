@@ -1,0 +1,30 @@
+  - platform: mqtt
+    name: "Alarm full"
+    state_topic: "kladno/veranda/433"
+    command_topic: "kladno/veranda/433"
+    payload_on: "alarmOn"
+    payload_off: "alarmOff"
+    #payload_on: "tone25"
+    #payload_off: "tone80"
+    optimistic: true
+    qos: 0
+    retain: true
+  - platform: mqtt
+    name: "Alarm first floor"
+    state_topic: "kladno/veranda/433"
+    command_topic: "kladno/veranda/433"
+    payload_on: "alarmFirstFloorOn"
+    payload_off: "alarmOff"
+    optimistic: false
+    qos: 0
+    retain: true
+  - platform: command_line
+    name: "Kladno TV liv"
+    optimistic: true
+    switches:
+      tv_kladno_liv_room:
+        command_on: "/home/homeassistant/.homeassistant/scripts/kladnolivingroomtvpoweron.sh"
+        command_off: "/home/homeassistant/.homeassistant/scripts/kladnolivingroomtvpower.sh"
+        command_state: "/home/homeassistant/.homeassistant/scripts/kladnolivngroomtvping.sh"
+        value_template: '{{ value == "1" }}'
+        friendly_name: Kladno living room TV

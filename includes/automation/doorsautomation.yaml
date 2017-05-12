@@ -1,0 +1,47 @@
+  - alias: doorsOpen
+    hide_entity: true
+    trigger:
+      platform: state
+      entity_id:
+        - binary_sensor.backdoors
+        - binary_sensor.veranda_entrance
+      state: 'on'
+    action:
+     service:  mqtt.publish
+     data:
+      topic: "kladno/veranda/callback"
+      payload: "tone10"
+  - alias: doorsClose
+    hide_entity: true
+    trigger:
+      platform: state
+      entity_id:
+        - binary_sensor.backdoors
+        - binary_sensor.veranda_entrance
+      state: 'off'
+    action:
+     service:  mqtt.publish
+     data:
+      topic: "kladno/veranda/callback"
+      payload: "tone253"
+  - alias: doorsChodba
+    hide_entity: true
+    trigger:
+      platform: state
+      entity_id:
+        - sensor.veranda_433
+      state: '583760'
+    condition:
+     condition: or
+     conditions:
+      - condition: state
+        entity_id: 'switch.alarm_full'
+        state: 'on'
+      - condition: state
+        entity_id: 'switch.alarm_first_floor'
+        state: 'on'
+    action:
+     service:  mqtt.publish
+     data:
+      topic: "kladno/veranda/callback"
+      payload: "tone253"

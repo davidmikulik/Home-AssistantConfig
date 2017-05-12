@@ -1,0 +1,45 @@
+ #   entity_id: c433
+#      custom_ui_state_card: 433_home
+
+#    - entity_id: light.bedroom,light.kitchen,light.hallway
+#      custom_ui_state_card: custom_light
+
+    sensor.light_kladno_studyroom:
+      icon: mdi:theme-light-dark
+    sensor.temperature_pracovna:
+      icon: mdi:thermometer
+    sensor.humidity_pracovna:
+      icon: mdi:water-percent
+    sensor.humidity_jachymov:
+      icon: mdi:water-percent
+    sensor.light_jachymov_livroom:
+      icon: mdi:theme-light-dark
+    sensor.teplota_jachymov_kuchyn:
+      icon: mdi:thermometer
+    sensor.vlhkost_jachymov_kuchyn:
+      icon: mdi:water-percent
+    sensor.temperature_jachymov:
+      icon: mdi:thermometer
+    sensor.jachymov_resetator_alive:
+      icon: mdi:counter
+      hidden: false
+    sensor.testmotion:
+      hidden: true
+    switch.alarm_full:
+      assumed_state: false
+    device_tracker.printer_xerox:
+      icon: mdi:printer
+    binary_sensor.jachymov_webcam_living_room:
+      icon: mdi:webcam
+    binary_sensor.jachymov_raspberry:
+      icon: mdi:vpn
+    binary_sensor.jachymov_adsl:
+      icon: mdi:router-wireless
+    binary_sensor.tiskarna_kladno:
+      icon: mdi:printer
+    binary_sensor.router_kladno:
+      icon: mdi:router-wireless
+    binary_sensor.nas_kladno:
+      icon: mdi:harddisk
+    binary_sensor.kladno_tv_living_room:
+      icon: mdi:television

@@ -1,0 +1,276 @@
+
+5ccf7f15a8a4:
+  name: Node MCU - vratka
+  mac: 5C:CF:7F:15:A8:A4
+  picture: 
+  track: yes
+  hide_if_away: no
+
+mikulikovinas:
+  name: MIKULIKOVINAS
+  mac: 4C:9E:FF:0F:95:7A
+  picture: 
+  track: yes
+  hide_if_away: no
+
+mikulikovipc:
+  name: Mikulikovi-PC
+  mac: 00:1E:8C:85:C8:C8
+  picture: 
+  track: yes
+  hide_if_away: no
+
+847a8854c6a3:
+  name: Jita mobil
+  mac: 84:7A:88:54:C6:A3
+  picture: cellphone-android
+  track: yes
+  hide_if_away: no
+
+0018f883dc60:
+  name: Mikulikovi SIP
+  mac: 00:18:F8:83:DC:60
+  picture: 
+  track: yes
+  hide_if_away: no
+
+002722572677:
+  name: router to internet
+  mac: 00:27:22:57:26:77
+  picture: 
+  track: yes
+  hide_if_away: no
+
+00216a0610d6:
+  name: Notebook Fujitsu
+  mac: 00:21:6A:06:10:D6
+  picture: 
+  track: yes
+  hide_if_away: no
+
+a0f459d7123f:
+  name: Media Player Android Stick
+  mac: A0:F4:59:D7:12:3F
+  picture: 
+  track: yes
+  hide_if_away: no
+
+94350ab8cc85:
+  name: Maja Mobil
+  mac: 94:35:0A:B8:CC:85
+  picture: 
+  track: yes
+  hide_if_away: no
+
+0023542bd82e:
+  name: Martin PC
+  mac: 00:23:54:2B:D8:2E
+  picture: 
+  track: yes
+  hide_if_away: no
+
+40786adb044a:
+  name: Martin Mobil
+  mac: 40:78:6A:DB:04:4A
+  picture: cellphone-android
+  track: yes
+  hide_if_away: no
+
+90e7c4c6968b:
+  name: David Mobil
+  mac: 90:E7:C4:C6:96:8B
+  picture: cellphone-android
+  track: yes
+  hide_if_away: no
+
+jitanotebook:
+  name: Jita-Notebook
+  mac: EC:55:F9:83:C8:37
+  picture: 
+  track: yes
+  hide_if_away: no
+
+raspberry:
+  name: raspberry
+  mac: B8:27:EB:1E:CE:97
+  picture: 
+  track: yes
+  hide_if_away: no
+
+tiskarnaxerox:
+  name: TiskarnaXerox
+  mac: 00:00:AA:E2:85:81
+  picture: 
+  track: yes
+  hide_if_away: no
+
+7ced8da6876e:
+  name: Xbox
+  mac: 7C:ED:8D:A6:87:6E
+  picture: 
+  track: yes
+  hide_if_away: no
+
+d0176a129f80:
+  name: Kiki Samsung
+  mac: D0:17:6A:12:9F:80
+  picture: 
+  track: yes
+  hide_if_away: no
+
+d0e782461be7:
+  name: Tablet Acer
+  mac: D0:E7:82:46:1B:E7
+  picture: 
+  track: yes
+  hide_if_away: no
+
+24da9b5f68da:
+  name: Marketka Moto
+  mac: 24:DA:9B:5F:68:DA
+  picture: 
+  track: yes
+  hide_if_away: no
+
+a0a8cdafb6a8:
+  name: David Notebook
+  mac: A0:A8:CD:AF:B6:A8
+  picture: 
+  track: yes
+  hide_if_away: no
+
+
+0023632cfde9:
+  name: DVR Video
+  mac: 00:23:63:2C:FD:E9
+  picture: 
+  track: yes
+  hide_if_away: no
+
+206e9cc81fed:
+  name: 206e9cc81fed
+  mac: 20:6E:9C:C8:1F:ED
+  picture: 
+  track: yes
+  hide_if_away: no
+
+000000000000:
+  name: 000000000000
+  mac: 00:00:00:00:00:00
+  picture: 
+  track: yes
+  hide_if_away: yes
+
+60d9a01cb191:
+  name: Martin tablet
+  mac: 60:D9:A0:1C:B1:91
+  picture: 
+  track: yes
+  hide_if_away: no
+
+18fe34d3f269:
+  name: Node mcu lua - Fik teplomer
+  mac: 18:FE:34:D3:F2:69
+  picture: 
+  track: yes
+  hide_if_away: no
+
+18fe34d42c95:
+  name: Node mcu - tlacitka
+  mac: 18:FE:34:D4:2C:95
+  picture: 
+  track: yes
+  hide_if_away: no
+
+5ccf7f810d57:
+  name: Node MCU - vadny z AliExpresu
+  mac: 5C:CF:7F:81:0D:57
+  picture: 
+  track: no
+  hide_if_away: yes
+
+8400d2e055a1:
+  name: Xperia mini
+  mac: 84:00:D2:E0:55:A1
+  picture: 
+  track: yes
+  hide_if_away: no
+
+18fe34d3fc35:
+  name: Node MCU - vratka 2
+  mac: 18:FE:34:D3:FC:35
+  picture: 
+  track: yes
+  hide_if_away: no
+
+
+
+18fe34848014:
+  name: ESP 01 - na arduinu
+  mac: 18:FE:34:84:80:14
+  picture: 
+  track: yes
+  hide_if_away: no
+
+18fe3416701a:
+  name: ESP 01 - samostatne
+  mac: 18:FE:34:16:70:1A
+  picture: 
+  track: yes
+  hide_if_away: no
+
+30303241544c:
+  name: 30303241544c
+  mac: 30:30:32:41:54:4C
+  picture: 
+  track: yes
+  hide_if_away: no
+
+4480eb361b71:
+  name: 4480eb361b71
+  mac: 44:80:EB:36:1B:71
+  picture: 
+  track: yes
+  hide_if_away: no
+
+b827eb3ba90f:
+  name: b827eb3ba90f
+  mac: B8:27:EB:3B:A9:0F
+  picture: 
+  track: yes
+  hide_if_away: no
+
+28ef014e8dfa:
+  name: 28ef014e8dfa
+  mac: 28:EF:01:4E:8D:FA
+  picture: 
+  track: yes
+  hide_if_away: no
+
+74754866116a:
+  name: 74754866116a
+  mac: 74:75:48:66:11:6A
+  picture: 
+  track: yes
+  hide_if_away: no
+
+84d6d0183316:
+  name: 84d6d0183316
+  mac: 84:D6:D0:18:33:16
+  picture: 
+  track: yes
+  hide_if_away: no
+
+e4a47115dfa1:
+  name: e4a47115dfa1
+  mac: E4:A4:71:15:DF:A1
+  picture: 
+  track: yes
+  hide_if_away: no
+
+0c8bfd474ff0:
+  name: 0c8bfd474ff0
+  mac: 0C:8B:FD:47:4F:F0
+  picture: 
+  track: yes
+  hide_if_away: no

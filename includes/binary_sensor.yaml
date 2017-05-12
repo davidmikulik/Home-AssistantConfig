@@ -1,0 +1,81 @@
+  - platform: ping
+    name: 'Jachymov Raspberry'
+    host: 10.8.0.6
+    device_class: connectivity
+  - platform: ping
+    name: 'Jachymov ADSL'
+    host: !secret jachymovexternalip
+    device_class: connectivity
+  - platform: ping
+    name: 'Seznam'
+    host: www.seznam.cz
+    device_class: connectivity
+  - platform: command_line
+    command: 'sudo ping -c 1 10.102.0.252 | grep "1 received" | wc -l'
+    name: 'Node Deda'
+    payload_on: 1
+    payload_off: 0
+    device_class: connectivity
+  - platform: command_line
+    name: 'Tiskarna Kladno'
+    command: 'sudo ping -c 1 10.0.0.6 | grep "1 received" | wc -l'
+    payload_on: 1
+    payload_off: 0
+    device_class: connectivity
+  - platform: command_line
+    name: 'NAS Kladno'
+    command: 'sudo ping -c 1 10.0.0.11 | grep "1 received" | wc -l'
+    payload_on: 1
+    payload_off: 0
+    device_class: connectivity
+  - platform: command_line
+    command: 'sudo ping -c 1 10.0.0.1 | grep "1 received" | wc -l'
+    name: 'Router Kladno'
+    payload_on: 1
+    payload_off: 0
+    device_class: connectivity
+  - platform: command_line
+    command: 'sudo ping -c 1 10.0.0.179 | grep "1 received" | wc -l'
+    name: 'NodeMCU Kladno pracovna'
+    payload_on: 1
+    payload_off: 0
+    device_class: connectivity
+  - platform: command_line
+    command: 'sudo ping -c 1 10.0.2.139 | grep "1 received" | wc -l'
+    name: 'NodeMCU Jachymov Living Room'
+    payload_on: 1
+    payload_off: 0
+    device_class: connectivity
+  - platform: command_line
+    command: 'sudo ping -c 1 10.0.2.2 | grep "1 received" | wc -l'
+    name: 'Jachymov webcam living room'
+    payload_on: 1
+    payload_off: 0
+    device_class: connectivity
+  - platform: command_line
+    command: 'sudo ping -c 1 10.0.0.122 | grep "1 received" | wc -l'
+    name: 'Kladno Tv living room'
+    payload_on: 1
+    payload_off: 0
+    device_class: connectivity
+  - platform: ping
+    name: 'Kladno living room Tv'
+    host: 10.0.0.122
+  - platform: mqtt
+    state_topic: "kladno/doors/backdoor"
+    name: 'Backdoors'
+    payload_on: 1
+    payload_off: 0
+    device_class: opening
+  - platform: mqtt
+    state_topic: "kladno/doors/ver1"
+    name: 'Veranda entrance'
+    payload_on: 1
+    payload_off: 0
+    device_class: opening
+  - platform: mqtt
+    state_topic: "kladno/veranda/motion"
+    name: 'Veranda motion'
+    payload_on: 1
+    payload_off: 0
+    device_class: motion

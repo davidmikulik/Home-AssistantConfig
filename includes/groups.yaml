@@ -1,0 +1,89 @@
+#################################################################
+## Groups
+#################################################################
+  default_view:
+    view: yes
+    icon: mdi:home
+    entities:
+    - group.main
+    - group.alarm
+  Jachymov_:
+    view: yes
+    icon: mdi:tower-fire
+    entities:
+      - group.jachymov
+  Kladno:
+    view: yes
+    icon: mdi:home-outline
+    entities:
+      - group.alarm
+      - group.home
+      - group.jachymov
+      - group.engines
+      - group.external
+  Main:
+    - binary_sensor.nodemcu_kladno_pracovna
+    - binary_sensor.jachymov_raspberry
+    - sensor.temperature_pracovna
+    - sensor.temperature_jachymov
+    - sensor.jachymov_outdoor_temperature
+    - sensor.veranda_temperature
+    - sensor.veranda_433
+    - sensor.veranda_light
+    - binary_sensor.kladno_living_room_tv
+  Alarm:
+  - switch.alarm_full
+  - switch.alarm_first_floor
+  Home:
+  - binary_sensor.nodemcu_kladno_pracovna
+  - sensor.temperature_pracovna
+  - sensor.humidity_pracovna
+  - sensor.light_kladno_studyroom
+  - sensor.testmotion
+#  - sensor.kladno_433
+  - sensor.veranda_humidity
+  - sensor.veranda_temperature
+  - binary_sensor.veranda_entrance
+  - binary_sensor.backdoors 
+  - binary_sensor.veranda_motion
+  - sensor.veranda_433
+  - sensor.veranda_light
+  - switch.tv_kladno_liv_room
+  - sensor.kladno_gate_distance
+  - media_player.kladno_living_room_tv
+  - sensor.kladno_doorbell
+  #- sensor.door_bell
+  #- sensor.mailbox
+  Jachymov:
+    - sensor.temperature_jachymov
+    - sensor.humidity_jachymov
+ #   - sensor.light_jachymov_livroom
+    - sensor.teplota_jachymov_kuchyn
+    - sensor.vlhkost_jachymov_kuchyn
+    - binary_sensor.jachymov_raspberry
+    - binary_sensor.jachymov_adsl
+    - binary_sensor.nodemcu_jachymov_living_room
+    - binary_sensor.jachymov_webcam_living_room
+    - sensor.jachymov_resetator_alive
+    - sensor.jachymov_outdoor_temperature
+    - sensor.jachymov_ad
+    - sensor.jachymov_adsl_start
+    - camera.local_file
+    - camera.local_file_2
+    # - camera.mjpeg_camera
+  External:
+  - sensor.yr_symbol
+  - sensor.yr_cloudiness
+  - sun.sun
+  - sensor.moon
+  - sensor.time
+  Engines:
+  - binary_sensor.seznam
+  - binary_sensor.node_deda 
+  - binary_sensor.nas_kladno
+  - binary_sensor.tiskarna_kladno
+  - binary_sensor.router_kladno
+#  - device_tracker.printer_xerox
+#  - device_tracker.hostone
+  - binary_sensor.kladno_living_room_tv
+  - binary_sensor.jachymov_adsl  
